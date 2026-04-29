@@ -34,3 +34,53 @@ const elem = ingredients.map((ingridient) => {
     return item;
 });
 listerRef.append(...elem);
+
+// Images
+const images = [
+  {
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
+  },
+  {
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+  },
+  {
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
+  },
+];
+
+const listersRef = document.querySelector("#gallery");
+
+function createItemsMarcup(arr) {
+  const item = arr.map(({alt, url}) => {
+    return `<li>
+    <img src=${url} alt=${alt}>
+    </li>`;
+    
+  }).join("");
+  listersRef.innerHTML = item;
+}
+
+createItemsMarcup(images);
+
+// Counts
+let current = 0;
+const countRef = document.querySelector("#value")
+const btnRef = document.querySelectorAll(`.btn`)
+
+btnRef.forEach((btn) => {
+  btn.addEventListener("click", (evt) => {
+
+    const action = evt.target.dataset.action;
+    if (action === "increment") {
+      current += 1;
+      countRef.textContent = current;
+    }
+    if (action === "decrement") {
+      current -= 1;
+      countRef.textContent = current;
+    }
+  });
+});

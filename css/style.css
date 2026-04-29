@@ -1,0 +1,25 @@
+img{
+    width: 300px;
+}
+#value{
+    font-size: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color:blue;
+}
+.btn{
+    font-size: 45px;
+    padding: 30px 40px;
+    border-radius: 30px;
+    background-image: linear-gradient(blue, yellow);
+    color: rgb(255, 255, 255);
+    transition-property: padding;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.btn:hover{
+padding: 40px 50px;
+}
+.title{
+    margin-left: 55px;
+}
